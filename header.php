@@ -6,6 +6,16 @@
 		<?php wp_head(); ?>
 	</head>
 
-	<body>
+	<?php
+
+		if( is_front_page() ):
+			$aufildesmots_classes = array('aufildesmots-class','my-class');
+		else:
+			$aufildesmots_classes = array('no-aufildesmots-class');
+		endif;
+
+	?>
+
+	<body <?php  body_class($aufildesmots_classes);?>>
 
 		<?php wp_nav_menu(array('theme_location' => 'primary')); ?>
